@@ -1,0 +1,19 @@
+registry: registry
+host: unix:///var/run/docker.sock
+gc: 5
+machines:
+  - id: node-12
+    type: docker
+    image: node:12
+    entrypoint: [ "tail","-f","/dev/null" ]
+    repl: [ "node" ]
+  - id: redis
+    type: docker
+    image: redis
+    entrypoint: [ "tail","-f","/dev/null" ]
+    repl: [ "redis-cli" ]
+  - id: ubuntu
+    type: docker
+    image: ubuntu
+    entrypoint: [ "tail","-f","/dev/null" ]
+    repl: [ "bash" ]
